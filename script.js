@@ -7,6 +7,7 @@ async function getprojects() {
       let projectDetails=this.responseText;
       let data=JSON.parse(projectDetails);
       for(ele of data){
+        console.log(ele.projectRepo);
         let projectRepo=`https://github.com/Omkar0104/${ele.name}`;
         if(!ele.has_pages)
         {
@@ -21,7 +22,7 @@ async function getprojects() {
 description='Check out repository for more information';
         }
         else if(ele.description.length>60){
-          description=`${ele.description.slice(0,60)} <a href=${ele.projectRepo}>Read More</a>`;
+          description=`${ele.description.slice(0,60)} <a href=${projectRepo}>Read More</a>`;
         }
         else{
           description=ele.description;
