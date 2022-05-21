@@ -32,18 +32,13 @@ body{
 .projectLink{
     justify-self: end;
   height: 40px;
-  border: none;
-  background-color: #00a8ff;
-  color: #fff;
   font-size: 18px;
   border-radius: 6px;
   outline: none;
   cursor: pointer;
   transition: .3s linear;
-  text-decoration: none;
-  padding: 5px 10px;
-  background-color: white;
-  color: black;
+  margin: 3px;
+  background-color:#ffffff26;
   border: 2px solid #00000024;
   padding: 5px 10px;
   text-align: center;
@@ -54,4 +49,21 @@ body{
 .projectLink:hover{
     background-color: rgb(239 255 255);
     text-decoration: none;
+  }
+  .changeBg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }

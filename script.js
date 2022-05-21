@@ -20,20 +20,22 @@ async function getprojects() {
         if(ele.description==null){
 description='Check out repository for more information';
         }
+        else if(ele.description.length>60){
+          description=`${ele.description.slice(0,60)} <a href=${ele.projectRepo}>Read More</a>`;
+        }
         else{
           description=ele.description;
         }
-       
         document.querySelector('.projectContainer').insertAdjacentHTML('beforeend',
       `<div class="card projectCard">
       <div class="card-body">
-      <div className="cardContent">
+      <div class="cardContent">
         <h5 class="card-title"><b>${ele.name.charAt(0).toUpperCase()+ele.name.slice(1)}</b></h5>
         <p class="card-text">
         ${description}
         </p>
         </div>
-        <div className="cardLinks">
+        <div class="cardLinks">
         <a href=${projectLink} target='_blank' style=" color:black" class='projectLink'> See Project</a>
         <a href=${projectRepo} target='_blank' style=" color:black" class='projectLink'>Project Repo</a>
         </div>
