@@ -11,7 +11,7 @@ async function getprojects() {
         let projectRepo=`https://github.com/Omkar0104/${ele.name}`;
         if(!ele.has_pages)
         {
-           projectLink='https://sparkleled.000webhostapp.com/';
+           projectLink=`https://github.com/Omkar0104/${ele.name}`;
         }
         else{
           projectLink=`https://omkar0104.github.io/${ele.name}/`;
