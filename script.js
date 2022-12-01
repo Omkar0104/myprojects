@@ -9,12 +9,10 @@ async function getprojects() {
       for(ele of data){
         console.log(ele.projectRepo);
         let projectRepo=`https://github.com/Omkar0104/${ele.name}`;
-        if(!ele.has_pages)
-        {
-           projectLink=`https://github.com/Omkar0104/${ele.name}`;
-        }
-        else{
-          projectLink=`https://omkar0104.github.io/${ele.name}/`;
+        if (ele.homepage) {
+          projectLink = ele.homepage;
+        } else {
+          projectLink = projectRepo;
         }
       if(!ele.fork){
         let description;
@@ -29,10 +27,11 @@ description='Check out repository for more information';
         }
         document.querySelector('.projectContainer').insertAdjacentHTML('beforeend',
       `<div class="card projectCard">
-      <div class="card-body">
+      
+      <div class="card-body cardBodyStyle">
       <div class="cardContent">
         <h5 class="card-title"><b>${ele.name.charAt(0).toUpperCase()+ele.name.slice(1)}</b></h5>
-        <p class="card-text">
+        <p class="card-text ">
         ${description}
         </p>
         </div>
